@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails", "~> 5.0.0", ">= 5.0.0.1"
+gem "faker", "1.6.6"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "bootstrap-sass", "3.3.6"
 gem "font-awesome-rails"
@@ -14,6 +15,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "devise"
 gem "config"
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 group :development, :test do
   gem "byebug", platform: :mri

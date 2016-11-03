@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 20161102080617) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "description", limit: 65535
-    t.string   "type"
+    t.boolean  "is_food",                      default: true
     t.float    "price",       limit: 24
     t.float    "rating",      limit: 24
     t.integer  "category_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
 
