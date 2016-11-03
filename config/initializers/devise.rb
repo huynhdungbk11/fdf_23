@@ -6,8 +6,6 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '86e1b199e273de69371112ca4a3c1a26e63618eb18b59b84a2b7d2a96ad0958023ceddef3a69f0131aa6a9cc1127f5b31e57f311a54b7d4c118b98c4e731c2c3'
-
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -108,7 +106,6 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '114329701a1fd607e616a7a7ae4b89b5befd6fa40e1d682faca33fcb8f29077a9893e72ffcf8c10338b57b512718aeb6a363a5127d4590a8e1a9e9e980e53eba'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -271,4 +268,22 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  Devise.setup do |config|
+  #Replace example.com with your own domain name
+  config.mailer_sender = "mailer@fdf23.com"
+
+  require "devise/orm/active_record"
+    config.case_insensitive_keys = [:email]
+    config.strip_whitespace_keys = [:email]
+    config.skip_session_storage = [:http_auth]
+    config.stretches = Rails.env.test? ? 1 : 10
+    config.reconfirmable = true
+    config.expire_all_remember_me_on_sign_out = true
+    config.password_length = 8..128
+    config.reset_password_within = 6.hours
+    config.sign_out_via = :delete
+
+    config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"]
+    config.omniauth :twitter, ENV["TWITTER_APP_ID"], ENV["TWITTER_APP_SECRET"]
+  end
 end
