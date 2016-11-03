@@ -1,24 +1,64 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   title_home: "Foods & Drinks"
+  menu_home: "HOME"
+  menu_about: "ABOUT"
+  menu_product: "PRODUCT"
+  menu_price: "PRICE"
+  menu_login: "LOGIN"
+  menu_sign_up: "REGISTER"
+  slide_list: "LIST "
+  slide_category: "CATEGORY"
+  slide_type1: "Fruits"
+  slide_type2: "Vegetables"
+  slide_type3: "Dessert"
+  slide_type4: "Alcohol"
+  slide_type5: "Soda"
+  slide_type6: "Beer"
+  slide_type7: "Clean Water"
+  slide_type8: "Milk"
+  about_your: "Your "
+  about_framgia: "Framgia"
+  about_website: "Website Foods & Drinks"
+  about_view: "View"
+  about_content1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim "
+  about_content2: " ad minim veniam, quis nostrud exercitation ullamco
+    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in "
+  about_content3: "voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat"
+  blog_list: "List "
+  blog_food: "Foods"
+  blog_and: " & "
+  blog_drink: "Drinks "
+  blog_product_name: "Homestyle Chicken Pot Pie"
+  blog_product_content: "Prepared in true New England fash-ion.
+    Tender all-white meat chicken simmered..."
+  blog_more_info: "More Info"
+  price_our: "our "
+  price_menu: "MENU"
+  price_the: " the "
+  price_price: "PRICE"
+  price_price_content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco "
+  price_featured: "Featured"
+  price_week: " on the week"
+  price_name: "Foods and Drinks"
+  price_right_price: "$ 25.00"
+  price_bot_content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim&&"
+  search_a: "SEARCH"
+  search_b: " ALL "
+  search_c: "FOODS & DRINK"
+  search_content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod"
+  search_button: "Search"
+  footer_contact: "CONTACT"
+  footer_contact_info: "INFO"
+  footer_phone: "Telephone"
+  footer_phone_number: "(000) 123 456 78- (000) 123 4567 89"
+  footer_button_copy: "Copyright @ "
+  footer_button_ct: "Framgia"
