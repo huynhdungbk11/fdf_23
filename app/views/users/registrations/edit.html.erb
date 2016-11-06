@@ -50,6 +50,10 @@
             <%= f.label :current_password %> <i><%= t "current_pass" %></i><br />
             <%= f.password_field :current_password, autocomplete: "off" %>
           </div>
+          <div class="field">
+            <%= f.label :avatar %>:
+            <%= f.file_field :avatar %>
+          </div>
           <p class="signin button">
             <%= f.submit t(:edit_button) %>
           </p>

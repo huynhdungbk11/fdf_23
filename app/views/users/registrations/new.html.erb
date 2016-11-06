@@ -44,6 +44,10 @@
               required: "required",
               class: "passwordsignup_confirm", placeholder: (t "lg_field_pass") %>
           </p>
+          <p>
+            <%= f.label :avatar %>:
+            <%= f.file_field :avatar %>
+          </p>
           <p class="signin button">
             <%= f.submit t(:rg_signup) %>
           </p>

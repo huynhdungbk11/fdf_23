@@ -20,6 +20,9 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem "figaro"
+gem "paperclip"
+gem "cancancan"
+gem "rolify"
 
 group :development, :test do
   gem "byebug", platform: :mri
