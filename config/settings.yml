@@ -13,3 +13,11 @@ image:
   default_url: "/images/:style/missing.png"
 index:
   id: 1
+  products: 5
+filter:
+  conditions: ["Drink" , "Food", "All"]
+filt:
+  conditions:
+    is_drink: Drink
+    is_food: Food
+    all: All
