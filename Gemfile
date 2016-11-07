@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
 gem "rails", "~> 5.0.0", ">= 5.0.0.1"
-gem "bootstrap-will_paginate", "0.0.10"
+gem "bcrypt", "3.1.11"
+gem "faker", "1.6.6"
 gem "bootstrap-sass", "3.3.6"
 gem "font-awesome-rails"
 gem "animate-rails"
@@ -23,6 +24,8 @@ gem "figaro"
 gem "paperclip"
 gem "cancancan"
 gem "rolify"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 
 group :development, :test do
   gem "byebug", platform: :mri
