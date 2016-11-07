@@ -29,12 +29,22 @@
                   <li>
                     <%= link_to t(:menu_price), "#" %>
                   </li>
-                  <li>
-                    <%= link_to t(:menu_login), "#" %>
-                  </li>
-                  <li>
-                    <%= link_to t(:menu_sign_up), "#" %>
-                  </li>
+                  <% if user_signed_in? %>
+                    <li>
+                      <%= link_to t(:menu_edit_profile),
+                        edit_user_registration_path %>
+                    </li>
+                    <li>
+                      <%= link_to t(:menu_sign_out), destroy_user_session_path, method: :delete %>
+                    </li>
+                  <% else %>
+                    <li>
+                      <%= link_to t(:menu_login), new_user_session_path %>
+                    </li>
+                    <li>
+                      <%= link_to t(:menu_sign_up), new_user_registration_path %>
+                    </li>
+                  <% end %>
                 </ul>
               </div>
             </div>
@@ -64,12 +74,22 @@
         <li>
           <%= link_to t(:menu_price), "#" %>
         </li>
-        <li>
-          <%= link_to t(:menu_login), "#" %>
-        </li>
-        <li>
-          <%= link_to t(:menu_sign_up), "#" %>
-        </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to t(:menu_edit_profile),
+              edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to t(:menu_sign_out), destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to t(:menu_login), new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to t(:menu_sign_up), new_user_registration_path %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
