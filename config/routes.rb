@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :products
   end
   root "static_pages#home"
+  resources :suggestions
   devise_for :users, controllers: {omniauth_callbacks: "callbacks",
     registrations: "users/registrations"}
   resources :products, only: [:index, :show]

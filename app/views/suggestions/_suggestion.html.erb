@@ -1,0 +1,18 @@
+<tr>
+  <td><%= increase_one index %></td>
+  <td><%= object.name %></td>
+  <td><%= object.description %></td>
+  <td>
+    <%= number_with_precision object.price, precision: 0 %>
+  </td>
+  <td><%= object.message %></td>
+  <td>
+    <%= object.status? ? t("suggestions.accepted") : t("suggestions.pending") %>
+  </td>
+  <td>
+    <%= link_to t("suggestions.edit"), edit_suggestion_path(object) %>
+    <%= link_to t("suggestions.delete"), suggestion_path(object),
+      method: :delete, data: {confirm: t("suggestion.delete_message")} %>
+  </td>
+  <td><%= image_tag object.image.url(:medium) %></td>
+</tr>

@@ -26,6 +26,7 @@ gem "cancancan"
 gem "rolify"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "remotipart", "~> 1.2"
 gem "jquery-datatables-rails", "~> 3.4.0"
 
 group :development, :test do

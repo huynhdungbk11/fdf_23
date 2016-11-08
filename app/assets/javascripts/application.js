@@ -18,4 +18,5 @@
 //= require bootstrap
 //= require owl.carousel
 //= require custom
+//= require jquery.remotipart
 //= require_tree .
