@@ -201,84 +201,62 @@
             <span><%= t "blog_drink" %></span>
           </h1>
           <ul>
-            <li class="wow fadeInLeft"
-              data-wow-duration="300ms" data-wow-delay="300ms">
-              <div class="blog-img">
-                <%= link_to "#" do %>
-                  <%= image_tag("blog-img-1.jpg", class: "wow fadeInUp",
-                    alt: "blog-img") %>
-                <% end %>
-              </div>
-              <div class="content-right">
-                <h3><%= t "blog_product_name" %></h3>
-                <p><%= t "blog_product_content" %></p>
-              </div>
-            </li>
-            <li class="wow fadeInLeft"
-              data-wow-duration="300ms" data-wow-delay="400ms">
-              <div class="blog-img">
-                <%= link_to "#" do %>
-                  <%= image_tag("blog-img-2.jpg", class: "wow fadeInUp",
-                    alt: "blog-img") %>
-                <% end %>
-              </div>
-              <div class="content-right">
-                <h3><%= t "blog_product_name" %></h3>
-                <p><%= t "blog_product_content" %></p>
-              </div>
-            </li>
-            <li class="wow fadeInLeft"
-              data-wow-duration="300ms" data-wow-delay="500ms">
-              <div class="content-left">
-                <h3><%= t "blog_product_name" %></h3>
-                <p><%= t "blog_product_content" %></p>
-              </div>
-              <div class="blog-img-2">
-                <%= link_to "#" do %>
-                  <%= image_tag("blog-img-3.jpg", class: "wow fadeInUp",
-                    alt: "blog-img") %>
-                <% end %>
-              </div>
-            </li>
-            <li class="wow fadeInLeft"
-              data-wow-duration="300ms" data-wow-delay="600ms">
-              <div class="content-left">
-                <h3><%= t "blog_product_name" %></h3>
-                <p><%= t "blog_product_content" %></p>
-              </div>
-              <div class="blog-img-2">
-                <%= link_to "#" do %>
-                  <%= image_tag("blog-img-4.jpg", class: "wow fadeInUp",
-                    alt: "blog-img") %>
-                <% end %>
-              </div>
-            </li>
-            <li class="wow fadeInLeft"
-              data-wow-duration="300ms" data-wow-delay="700ms">
-              <div class="blog-img">
-                <%= link_to "#" do %>
-                  <%= image_tag("blog-img-5.jpg", class: "wow fadeInUp",
-                    alt: "blog-img") %>
-                <% end %>
-              </div>
-              <div class="content-right">
-                <h3><%= t "blog_product_name" %></h3>
-                <p><%= t "blog_product_content" %></p>
-              </div>
-            </li>
-            <li class="wow fadeInUp"
-              data-wow-duration="300ms" data-wow-delay="800ms">
-              <div class="blog-img">
-                <%= link_to "#" do %>
-                  <%= image_tag("blog-img-6.jpg", class: "wow fadeInUp",
-                    alt: "blog-img") %>
-                <% end %>
-              </div>
-              <div class="content-right">
-                <h3><%= t "blog_product_name" %></h3>
-                <p><%= t "blog_product_content" %></p>
-              </div>
-            </li>
+            <% @products.each_with_index do |product, index| %>
+              <% if condition_show index %>
+                <li class="wow fadeInLeft"
+                  data-wow-duration="300ms" data-wow-delay="300ms">
+                  <div class="blog-img">
+                    <%= link_to "#" do %>
+                      <%= image_tag( product.image.url(:original),
+                        class: "wow fadeInUp",
+                        alt: "blog-img") %>
+                    <% end %>
+                  </div>
+                  <div class="content-right">
+                    <h3 class="pr_name_h3"><%= product.name %></h3>
+                    <p class="pr_des_p"><%= product.description %></p>
+                    <div class="interaction_area">
+                      <%= link_to cart_path(product.id), remote: true,
+                        method: :put, class: "btn btn_add_to_cart" do %>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <%= t "cart.add_to_card" %>
+                      <% end %>
+                      <%= link_to product_path(product),
+                        class: "btn btn-default btn_add_favorite" do %>
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <%= t "common.view_button" %>
+                      <% end %>
+                    </div>
+                  </div>
+                </li>
+              <% else %>
+                <li class="wow fadeInLeft"
+                  data-wow-duration="300ms" data-wow-delay="500ms">
+                  <div class="content-left">
+                    <h3 class="pr_name_h3"><%= product.name %></h3>
+                    <p class="pr_des_p"><%= product.description %></p>
+                    <div class="interaction_area">
+                      <%= link_to cart_path(product.id), remote: true,
+                        method: :put, class: "btn btn_add_to_cart" do %>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <%= t "cart.add_to_card" %>
+                      <% end %>
+                      <%= link_to product_path(product),
+                        class: "btn btn-default btn_add_favorite" do %>
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <%= t "common.view_button" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="blog-img">
+                    <%= link_to "#" do %>
+                      <%= image_tag( product.image.url(:original), class: "wow fadeInUp",
+                        alt: "blog-img") %>
+                    <% end %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
           </ul>
           <a class="btn btn-default btn-more-info wow bounceIn"
             data-wow-duration="500ms" data-wow-delay="1200ms"

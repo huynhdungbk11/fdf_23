@@ -23,4 +23,16 @@ document.addEventListener('turbolinks:load', function() {
       $('.navigation1').fadeOut();
     }
   });
+  var open = false;
+  $('#footerSlideButton').click(function () {
+    if(open === false) {
+      $('#footerSlideContent').animate({height: '270px'});
+      $(this).css('backgroundPosition', 'bottom left');
+      open = true;
+    } else {
+      $('#footerSlideContent').animate({height: '0px'});
+      $(this).css('backgroundPosition', 'top left');
+      open = false;
+    }
+  });
 });
