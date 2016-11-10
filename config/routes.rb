@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     registrations: "users/registrations"}
   namespace :admin do
     resources :products
+    resources :suggestions
   end
 end

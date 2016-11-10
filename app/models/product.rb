@@ -13,4 +13,9 @@ class Product < ApplicationRecord
     thumb: Settings.image.thumb},
     default_url: Settings.image.default_url
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  def update_suggestion_status id
+    suggestion = Suggestion.find_by id: id
+    suggestion.update_attributes status: true
+  end
 end
