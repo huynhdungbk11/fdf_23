@@ -1,4 +1,5 @@
 User.create! name: "Admin", email: "admin@gmail.com", password: "123456789", role: 0
+User.create! name: "huynhdung", email: "huynhdung@gmail.com", password: "123456789", role: 1
 5.times do
   name  = Faker::Name.name
   description = Faker::Lorem.sentence(5)
@@ -11,8 +12,7 @@ categories.each do |category|
     name = Faker::Lorem.sentence
     description = Faker::Lorem.sentence
     price = Faker::Number.number(6)
-    rating = rand(1..5)
     Product.create! name: name, description: description, price: price,
-      category_id: category.id, rating: rating
+      category_id: category.id
   end
 end
