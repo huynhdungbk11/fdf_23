@@ -21,4 +21,9 @@ filt:
     is_drink: Drink
     is_food: Food
     all: All
-  suggestion: 1
+show_product:
+  num_products: 6
+currency:
+  delimiter: ","
+  format: "%n %u"
+  precision: 0

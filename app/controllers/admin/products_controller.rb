@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+  layout "admin_application"
   before_action :load_product, only: [:edit, :destroy]
   before_action :load_categories, only: [:new, :edit, :create]
 
