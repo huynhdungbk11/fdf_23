@@ -1,9 +1,10 @@
 class Product < ApplicationRecord
   has_many :items
   has_many :comments
-  has_many :rates
   belongs_to :category
-
+  has_many :passive_rates, class_name: Rate.name,
+    foreign_key: :product_id, dependent: :destroy
+  has_many :raters, through: :passive_rates, source: :user
   enum kind: {food: 0, drink: 1}
 
   has_attached_file :image, styles: {mini: Settings.image.mini,
