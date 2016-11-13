@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @categories = Category.all
     params[:filter_by] = :all if params[:filter_by].blank?

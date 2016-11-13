@@ -21,3 +21,4 @@ filt:
     is_drink: Drink
     is_food: Food
     all: All
+rates: [1, 2, 3, 4, 5]

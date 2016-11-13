@@ -7,7 +7,9 @@ class User < ApplicationRecord
 
   has_many :suggestions
   has_many :orders
-  has_many :rates
+  has_many :active_rates, class_name: Rate.name,
+    foreign_key: :user_id, dependent: :destroy
+  has_many :rating, through: :active_rates, source: :product
   has_many :comments
 
   enum role: {admin: 0, user: 1}
@@ -29,4 +31,19 @@ class User < ApplicationRecord
   def assign_default_role
     self.add_role :newuser if self.roles.blank?
   end
+
+  def rate product, value
+    active_rates.create product_id: product.id, rate: value
+    product.update_attributes rating: product.raters.average(:rate)
+  end
+
+  def rerate product, value
+    active_rates.find_by(product_id: product.id).update_attributes rate: value
+    product.update_attributes rating: product.raters.average(:rate)
+  end
+
+  def rating? product
+    rating.include?product
+end
+
 end

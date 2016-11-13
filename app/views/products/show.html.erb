@@ -1,0 +1,20 @@
+<p class="aa-book-avilability">
+  <span>
+  <strong><%= t "product_rating" %>: </strong>
+  <span id = "rating_number" ><%= @product.rating %></span>
+  </span>
+</p>
+<div class="aa-product-rating rating" id = "rating_star">
+  <% i = 1 %>
+  <% while i <= @product.rating.floor do %>
+    <%= show_rating "star-active" %>
+    <% i += 1 %>
+  <% end %>
+  <% while i <= 5 do %>
+    <%= show_rating "" %>
+    <% i += 1 %>
+  <% end %>
+</div>
+<div>
+  <%= render "rate_form", object: @product %>
+</div>

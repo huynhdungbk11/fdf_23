@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 20161109014508) do
     t.text     "description",        limit: 65535
     t.integer  "kind",                             default: 0
     t.float    "price",              limit: 24
-    t.float    "rating",             limit: 24
+    t.float    "rating",             limit: 24,    default: 0.0
     t.integer  "category_id"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -66,11 +66,11 @@ ActiveRecord::Schema.define(version: 20161109014508) do
   end
 
   create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.float    "rate",       limit: 24
+    t.integer  "rate"
     t.integer  "user_id"
     t.integer  "product_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_rates_on_product_id", using: :btree
     t.index ["user_id"], name: "index_rates_on_user_id", using: :btree
   end

@@ -24,3 +24,7 @@ document.addEventListener('turbolinks:load', function() {
     }
   });
 });
+
+$(document).on('change', '.radio', function() {
+  $(this).closest('form').submit();
+});

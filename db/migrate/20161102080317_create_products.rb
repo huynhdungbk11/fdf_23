@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.text :description
       t.integer :kind, default: 0
       t.float :price
-      t.float :rating
+      t.float :rating, default: 0
       t.references :category, foreign_key: true
 
       t.timestamps
