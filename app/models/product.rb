@@ -21,4 +21,9 @@ class Product < ApplicationRecord
   scope :search_name, ->search do
     where "name LIKE ?", "%#{search}%" if search.present?
   end
+
+  def update_suggestion_status id
+    suggestion = Suggestion.find_by id: id
+    suggestion.update_attributes status: true
+  end
 end

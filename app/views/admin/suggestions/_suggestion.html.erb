@@ -1,0 +1,19 @@
+<tr>
+  <td><%= index + Settings.suggestion.index %></td>
+  <td><%= object.user.name %></td>
+  <td><%= object.name %></td>
+  <td><%= object.description %></td>
+  <td>
+    <%= number_with_precision(object.price,
+      precision: 0) %>
+  </td>
+  <td><%= object.message %></td>
+  <td><%= object.status %></td>
+  <td>
+    <%= link_to t("form_accept_suggestion"),
+      new_admin_product_path(object: object.id) %>
+    <%= link_to t("form_refuse_suggestion"), admin_suggestion_path(object),
+      method: :delete, data: {confirm: t("data_message")} %>
+  </td>
+  <td><%= image_tag object.image.url(:medium) %></td>
+</tr>

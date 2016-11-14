@@ -8,6 +8,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @suggestion = Suggestion.find_by id: params[:object]
   end
 
   def show
@@ -19,15 +20,17 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new product_params
     if @product.save
-      flash[:success] = t "flash_success_create_product"
-      redirect_to admin_products_path
+      if params[:suggestion_id]
+        @product.update_suggestion_status params[:suggestion_id]
+      end
+    flash[:success] = t "flash_success_create_product"
+    redirect_to admin_products_path
     else
       render :new
     end
   end
 
   def update
-
   end
 
   def destroy
