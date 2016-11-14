@@ -21,3 +21,4 @@ filt:
     is_drink: Drink
     is_food: Food
     all: All
+  suggestion: 1
