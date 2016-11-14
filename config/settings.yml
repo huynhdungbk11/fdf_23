@@ -11,6 +11,8 @@ image:
   thumb: "100x100>"
   mini: "48x48>"
   default_url: "/images/:style/missing.png"
+suggestion:
+  index: 1
 index:
   id: 1
   products: 5
