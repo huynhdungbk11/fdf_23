@@ -9,5 +9,10 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find_by id: params[:id]
+    unless @product
+      flash[:danger] = t "flash_danger_not_product"
+      redirect_to root_path
+    end
   end
 end

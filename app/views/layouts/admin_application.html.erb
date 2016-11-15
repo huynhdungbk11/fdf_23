@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t('title_home') %></title>
+    <title><%= t"title_home" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", media: "all",
-    "data-turbolinks-track": "reload" %>
+      "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
@@ -13,8 +13,7 @@
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
-    <%= render "layouts/support_online" %>
-    <%= render "layouts/carts_online" %>
+    <%= render "admin/menu" %>
     <%= yield %>
   </body>
 </html>
