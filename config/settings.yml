@@ -27,3 +27,11 @@ currency:
   delimiter: ","
   format: "%n %u"
   precision: 0
+condition:
+  index_default: 1
+  index_one: 1
+  index_tow: 2
+  index_fine: 5
+  index_six: 6
+item:
+  num_quantitty: 1
