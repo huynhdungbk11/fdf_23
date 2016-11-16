@@ -21,6 +21,8 @@
       <%= product_price @product.price %>
     </h3>
     <hr>
+    <%= social_share_button_tag @product.name %>
+    <hr>
     <%= link_to cart_path(@product.id), remote: true,
       method: :put, class: "btn btn_add_to_cart" do %>
       <span class="glyphicon glyphicon-shopping-cart"></span>

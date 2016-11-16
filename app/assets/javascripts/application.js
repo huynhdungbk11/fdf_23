@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require social-share-button
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require bootstrap

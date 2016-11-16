@@ -28,6 +28,7 @@ gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "remotipart", "~> 1.2"
 gem "jquery-datatables-rails", "~> 3.4.0"
+gem "social-share-button", "~> 0.1.6"
 
 group :development, :test do
   gem "byebug", platform: :mri
