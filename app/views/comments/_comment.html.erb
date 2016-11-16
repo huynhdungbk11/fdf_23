@@ -1,0 +1,24 @@
+<div class="media response-info">
+  <div id="comment-<%= comment.id %>">
+    <div class="media-left response-text-left">
+      <%= link_to image_tag(comment.user.avatar.url(:mini)) %>
+      <h5><%= link_to comment.user.name, "#" %></h5>
+    </div>
+    <div class="media-body response-text-right" id="comment-<%= comment.id %>-content">
+      <%= comment.content %>
+    </div>
+    <% if current_user.present? && current_user.is_user?(comment.user) %>
+      <%= link_to t("edit"), "javascript:;", id: "edit-comment-#{comment.id}",
+        class: "edit-comment" %>
+      <%= link_to t("delete"), comment_path(comment), method: :delete,
+        data:{confirm: "You sure?", remote: "true"}, title: comment.content %>
+    <% end %>
+  </div>
+  <div class="edit-form">
+    <%= form_for [comment] do |f| %>
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "form-control" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

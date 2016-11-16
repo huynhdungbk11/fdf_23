@@ -5,6 +5,7 @@ avatar:
   default_url: "/images/:style/missing.png"
 per_page:
   products: 6
+  comments: 10
 precision: 0
 image:
   medium: "220x220>"

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @categories = Category.all
     params[:filter_by] = :all if params[:filter_by].blank?
@@ -10,6 +12,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by id: params[:id]
+    @comments = @product.comments.newest.page(params[:page]).per Settings.per_page.comments
     unless @product
       flash[:danger] = t "flash_danger_not_product"
       redirect_to root_path

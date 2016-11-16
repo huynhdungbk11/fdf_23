@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def assign_default_role
     self.add_role :newuser if self.roles.blank?
   end
+
+  def is_user? user
+    self == user
+  end
 end

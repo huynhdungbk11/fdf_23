@@ -36,3 +36,9 @@ document.addEventListener('turbolinks:load', function() {
     }
   });
 });
+$(document).ready(function(){
+  $('.edit-form').hide();
+});
+$(document).on('click', '.edit-comment', function(){
+  $(this).closest('div').parent().find('.discm').fadeIn();
+});
